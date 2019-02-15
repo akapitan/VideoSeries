@@ -1,4 +1,5 @@
 from .base import *
+
 DEBUG = False
 ALLOWED_HOSTS = ['www.myhoast.com', ]
 
@@ -12,5 +13,5 @@ DATABASES = {
     }
 }
 
-STRIPE_PUBLISHABLE_KEY = 'your-public-key'
-STRIPE_SECRET_KEY = 'your-private-key'
+STRIPE_PUBLISHABLE_KEY = config('PUB_STRIPE_PUBLISHABLE_KEY')
+STRIPE_SECRET_KEY = config('PUB_STRIPE_SECRET_KEY')

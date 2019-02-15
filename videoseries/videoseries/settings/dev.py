@@ -1,5 +1,7 @@
 from .base import *
-DEBUG = True
+
+
+DEBUG = config('DEBUG', cast=bool)
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 INSTALLED_APPS += [
@@ -44,5 +46,5 @@ DEBUG_TOOLBAR_CONFIG = {
     'SHOW_TOOLBAR_CALLBACK': show_toolbar
 }
 
-STRIPE_PUBLISHABLE_KEY = 'pk_test_wsrKoOa3n36gx9KjGIHhGYM0'
-STRIPE_SECRET_KEY = 'sk_test_R4CKpPzjPZMQcDR17UigNzph'
+STRIPE_PUBLISHABLE_KEY = config('DEV_STRIPE_PUBLISHABLE_KEY')
+STRIPE_SECRET_KEY = config('DEV_STRIPE_SECRET_KEY')

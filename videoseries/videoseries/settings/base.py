@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'membership',
     'courses',
     'accounts',
+    'core',
 ]
 
 MIDDLEWARE = [
