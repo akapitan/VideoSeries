@@ -1,0 +1,33 @@
+{% extends 'courses/base.html' %}
+    {% block content %}
+        <div class="container">
+            <h1>Lesson detail view</h1>
+            <div class="row">
+                <div class="col-sm-6 col-md-6">
+                    {% if object is not None %}
+                        <h3>{{ object.title }}</h3>
+                        <p>{{ object.description }}</p>
+                        <video controls
+                                controlList="nodownload"
+                                poster="{{ object.thumbnail.url }}"
+                                src ="/static {{ object.video.url }}"
+                                width="300"
+                                height="200">
+                                Sorry, your browser doesn't support embeded videos.
+
+                        </video>
+                        <img src="{{ object.thumbnail.url }}"></img>
+
+                    {% else %}
+                        <h3>Uprade membership</h3>
+                        <a href="{% url 'memberships:select' %}"><button class="btn btn-warning">Subscribe</button></a>
+                        <hr>
+                    {% endif %}
+                </div>
+            </div>
+            
+        </div>
+        
+
+    {% endblock %}
+
