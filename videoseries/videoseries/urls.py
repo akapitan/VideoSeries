@@ -5,6 +5,7 @@ from django.conf.urls.static import static
 from django.conf import settings
 
 from .views import home
+from blog.views import blog_list, blog_index
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -12,6 +13,8 @@ urlpatterns = [
     path('memberships/', include("membership.urls", namespace='memberships')),
     path('', home),
     path('accounts/', include("accounts.urls", namespace='accounts')),
+    path('blog/', blog_list),
+    path('blog/index/', blog_index),
 
 ]
 
